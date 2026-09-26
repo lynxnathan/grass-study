@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "observations": [
+    {
+      "id": "9070xt-desktop-2026-09-26",
+      "date": "2026-09-26",
+      "source": "Nathan's desktop observation, reported in conversation",
+      "study": 8,
+      "gpu": "AMD Radeon RX 9070 XT",
+      "gpuUtilizationPercent": 20,
+      "approximate": true,
+      "buildAsset": "index-BigvFBLk.js",
+      "cloudflareVersion": "fe8fd12d-6845-4752-aade-ccd78198f921",
+      "context": "Live desktop session. Resolution, frame rate, measurement tool and other GPU activity were not recorded."
+    }
+  ]
+}

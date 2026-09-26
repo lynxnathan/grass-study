@@ -1,0 +1,267 @@
+{
+  "date": "2026-09-27",
+  "viewport": [
+    384,
+    288
+  ],
+  "samples": 4,
+  "scope": "Fixed cameras; isolated lower representations, tall blades and rain absent. Diagnostic masks measure rendered contribution, not photorealism.",
+  "results": [
+    {
+      "browser": "chromium",
+      "status": "passed",
+      "measurements": {
+        "foundationDifference": 19.036708502121915,
+        "reports": [
+          {
+            "mode": 11,
+            "kind": "opaque",
+            "covered": 0.31254521122685186,
+            "alphaLeaks": 0,
+            "contactDifference": 1.1568226755401234,
+            "recoveryDifference": 0,
+            "hiddenDifference": 19.15746467496142,
+            "hiddenPixels": 0,
+            "triangles": 934820,
+            "calls": 32
+          },
+          {
+            "mode": 11,
+            "kind": "cards",
+            "covered": 0.6948875144675926,
+            "alphaLeaks": 0,
+            "contactDifference": 2.4478925540123457,
+            "recoveryDifference": 0,
+            "hiddenDifference": 21.376160421489196,
+            "hiddenPixels": 0,
+            "triangles": 174980,
+            "calls": 32
+          },
+          {
+            "mode": 12,
+            "kind": "shells",
+            "covered": 0.9293438946759259,
+            "alphaLeaks": 0,
+            "contactDifference": 2.6907130111882718,
+            "recoveryDifference": 0,
+            "hiddenDifference": 22.94700641396605,
+            "hiddenPixels": 0,
+            "triangles": 237728,
+            "calls": 63
+          },
+          {
+            "mode": 13,
+            "kind": "implicit",
+            "covered": 0.9527271412037037,
+            "alphaLeaks": 0,
+            "contactDifference": 1.0607216917438271,
+            "recoveryDifference": 0,
+            "hiddenDifference": 24.680109471450617,
+            "hiddenPixels": 0,
+            "triangles": 88928,
+            "calls": 32
+          }
+        ],
+        "visibleObject": 4475,
+        "orderDifference": 0,
+        "route": [
+          {
+            "height": 0.6,
+            "mode": 11,
+            "coverage": 0.3295627170138889,
+            "coverageChange": 0.0006691261574074075,
+            "movementDifference": 35.213125723379626
+          },
+          {
+            "height": 0.6,
+            "mode": 12,
+            "coverage": 0.8960774739583334,
+            "coverageChange": 0.0001537181712962963,
+            "movementDifference": 5.63697193287037
+          },
+          {
+            "height": 0.6,
+            "mode": 13,
+            "coverage": 0.8235586660879629,
+            "coverageChange": 0.00026222511574074077,
+            "movementDifference": 0.6517288773148148
+          },
+          {
+            "height": 2,
+            "mode": 11,
+            "coverage": 0.27784107349537035,
+            "coverageChange": 0.001636646412037037,
+            "movementDifference": 27.870044849537038
+          },
+          {
+            "height": 2,
+            "mode": 12,
+            "coverage": 0.9446343315972222,
+            "coverageChange": 0.0007776331018518518,
+            "movementDifference": 13.24850802951389
+          },
+          {
+            "height": 2,
+            "mode": 13,
+            "coverage": 0.9568594473379629,
+            "coverageChange": 0.00014467592592592592,
+            "movementDifference": 3.131908275462963
+          },
+          {
+            "height": 7,
+            "mode": 11,
+            "coverage": 0.11522533275462964,
+            "coverageChange": 0.0003255208333333333,
+            "movementDifference": 9.423764829282407
+          },
+          {
+            "height": 7,
+            "mode": 12,
+            "coverage": 0.9087818287037037,
+            "coverageChange": 0.0001537181712962963,
+            "movementDifference": 20.349048755787038
+          },
+          {
+            "height": 7,
+            "mode": 13,
+            "coverage": 0.9604944299768519,
+            "coverageChange": 0.0002803096064814815,
+            "movementDifference": 3.515254267939815
+          }
+        ],
+        "revealDifference": 36.99605456693673,
+        "costViewDifference": 45.74890287422839,
+        "fewTriangles": 166304,
+        "manyTriangles": 309152
+      }
+    },
+    {
+      "browser": "firefox-render",
+      "status": "passed",
+      "measurements": {
+        "foundationDifference": 19.423984857253085,
+        "reports": [
+          {
+            "mode": 11,
+            "kind": "opaque",
+            "covered": 0.30507631655092593,
+            "alphaLeaks": 0,
+            "contactDifference": 1.0819800106095678,
+            "recoveryDifference": 0,
+            "hiddenDifference": 19.660126109182098,
+            "hiddenPixels": 0,
+            "triangles": 934820,
+            "calls": 32
+          },
+          {
+            "mode": 11,
+            "kind": "cards",
+            "covered": 0.6821108217592593,
+            "alphaLeaks": 0,
+            "contactDifference": 2.264793113425926,
+            "recoveryDifference": 0,
+            "hiddenDifference": 21.573426046489196,
+            "hiddenPixels": 0,
+            "triangles": 174980,
+            "calls": 32
+          },
+          {
+            "mode": 12,
+            "kind": "shells",
+            "covered": 0.9311161747685185,
+            "alphaLeaks": 0,
+            "contactDifference": 2.485869984567901,
+            "recoveryDifference": 0,
+            "hiddenDifference": 23.460331669560187,
+            "hiddenPixels": 0,
+            "triangles": 237728,
+            "calls": 63
+          },
+          {
+            "mode": 13,
+            "kind": "implicit",
+            "covered": 0.9534957320601852,
+            "alphaLeaks": 0,
+            "contactDifference": 1.1073163821373457,
+            "recoveryDifference": 0,
+            "hiddenDifference": 24.99124409239969,
+            "hiddenPixels": 0,
+            "triangles": 88928,
+            "calls": 32
+          }
+        ],
+        "visibleObject": 4447,
+        "orderDifference": 0,
+        "route": [
+          {
+            "height": 0.6,
+            "mode": 11,
+            "coverage": 0.32154224537037035,
+            "coverageChange": 0.0021610966435185184,
+            "movementDifference": 33.32939995659722
+          },
+          {
+            "height": 0.6,
+            "mode": 12,
+            "coverage": 0.8971896701388888,
+            "coverageChange": 0,
+            "movementDifference": 5.442093460648148
+          },
+          {
+            "height": 0.6,
+            "mode": 13,
+            "coverage": 0.8235948350694444,
+            "coverageChange": 0.00023509837962962962,
+            "movementDifference": 0.43764467592592593
+          },
+          {
+            "height": 2,
+            "mode": 11,
+            "coverage": 0.27146629050925924,
+            "coverageChange": 0.000732421875,
+            "movementDifference": 26.013020833333332
+          },
+          {
+            "height": 2,
+            "mode": 12,
+            "coverage": 0.9429796006944444,
+            "coverageChange": 2.712673611111111e-05,
+            "movementDifference": 15.225396050347221
+          },
+          {
+            "height": 2,
+            "mode": 13,
+            "coverage": 0.95703125,
+            "coverageChange": 0.00013563368055555556,
+            "movementDifference": 3.609881365740741
+          },
+          {
+            "height": 7,
+            "mode": 11,
+            "coverage": 0.12195276331018519,
+            "coverageChange": 0.0008770978009259259,
+            "movementDifference": 9.31516746238426
+          },
+          {
+            "height": 7,
+            "mode": 12,
+            "coverage": 0.9095323350694444,
+            "coverageChange": 0.00016276041666666666,
+            "movementDifference": 19.61404079861111
+          },
+          {
+            "height": 7,
+            "mode": 13,
+            "coverage": 0.9609375,
+            "coverageChange": 0.0003255208333333333,
+            "movementDifference": 7.097773799189815
+          }
+        ],
+        "revealDifference": 37.11410108024691,
+        "costViewDifference": 45.525050033757715,
+        "fewTriangles": 166304,
+        "manyTriangles": 309152
+      }
+    }
+  ]
+}

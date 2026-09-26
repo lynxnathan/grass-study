@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#e6ebdf" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111b16" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="An interactive study of grass rendering, wind and contact in WebGL. Rendering techniques in the same landscape." />
+    <title>Grass, not what you think — The ground beneath</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="world" aria-label="A rolling 3D landscape. Use WASD or arrow keys to walk, Shift to run, and right-drag or touch-drag to orbit the camera." tabindex="0"></canvas>
+      <header class="masthead">
+        <div><p class="eyebrow">A STUDY IN SMALL MOVEMENTS</p><h1>grass<span>not what you think.</span></h1></div>
+        <div class="chapter"><span id="study-number" class="chapter-number">00</span><div><span id="study-title">The ground beneath</span><small id="study-subtitle">Terrain · a common starting point</small></div></div>
+      </header>
+      <section id="loading" class="loading" aria-live="polite">
+        <p class="eyebrow">GETTING THE FIELD READY</p><h2 id="load-title">Loading the character…</h2>
+        <p id="load-detail">Loading the character and its animations.</p><button id="retry" hidden>Try again</button>
+      </section>
+      <nav class="study-navigation" aria-label="Study navigation">
+        <button id="study-previous" class="study-arrow" aria-label="Previous study" aria-keyshortcuts="PageUp h" title="Previous study · H / Page Up" disabled><span aria-hidden="true">‹</span></button>
+        <button id="study-next" class="study-arrow" aria-label="Next study" aria-keyshortcuts="PageDown l" title="Next study · L / Page Down" disabled><span aria-hidden="true">›</span></button>
+      </nav>
+      <section id="study-caption" class="study-caption" aria-labelledby="passage-title" hidden>
+        <div class="study-caption-heading"><p class="eyebrow">STUDY <span id="passage-number">00</span> · WHAT YOU’RE SEEING</p><span id="study-progress">1 / 14</span></div>
+        <button id="passage-close" class="passage-close" aria-label="Close passage" title="Close passage · Esc">×</button>
+        <h2 id="passage-title"></h2>
+        <p class="passage-copy"><span id="study-description" class="sr-only"></span><span id="study-copy" aria-hidden="true"></span></p>
+        <div class="passage-footer">
+          <details id="passage-details"><summary>Under the surface</summary><p id="study-cost"></p></details>
+          <button id="passage-advance" aria-keyshortcuts="Enter">Show all</button>
+        </div>
+      </section>
+      <section id="wind-panel" class="wind-panel" aria-labelledby="wind-title" hidden>
+        <div class="wind-panel-heading"><div><h2 id="wind-title">Winds, plural</h2><p id="wind-count"></p></div><button id="wind-close" aria-label="Close wind controls">×</button></div>
+        <p class="wind-help">Each point feels the sum of the winds. Turn a flow, move its origin, or add a vortex and watch the grass circle it.</p>
+        <div id="wind-list"></div>
+        <p id="wind-placement" class="wind-placement" role="status" hidden></p>
+        <p class="wind-help">Force view colors the response blue. Contact turns orange where wind is blue; hide wind tint to see contact in blue. Tab switches the view while the scene has focus.</p><div class="wind-panel-actions"><button id="wind-add">Add wind</button><button id="wind-vortex" hidden>Add vortex</button><button id="wind-reset">Reset winds</button><button id="wind-sampling" aria-pressed="true" title="Blend direct wind nearby into a shared sampled field farther away">Blend wind detail</button><button id="wind-highlight" aria-pressed="true" aria-keyshortcuts="v" title="Toggle wind highlights · V">Wind highlights · V</button><button id="contact-highlight" aria-pressed="true" aria-keyshortcuts="b" title="Toggle body and brush tint · B">Contact tint · B</button></div>
+      </section>
+      <section id="weather-panel" class="wind-panel weather-panel" aria-labelledby="weather-title" hidden>
+        <div class="wind-panel-heading"><div><h2 id="weather-title">After the rain</h2><p>Water, surface, light</p></div><button id="weather-close" aria-label="Close weather controls">×</button></div>
+        <p class="wind-help">Follow the path’s sheen. Move the light toward evening, then stop the rain and watch the surface dry.</p>
+        <label for="rain-amount">Rainfall <output id="rain-value" for="rain-amount">65%</output><input id="rain-amount" type="range" min="0" max="1" step="0.01" value="0.65"></label>
+        <label for="evening">Day into night <output id="evening-value" for="evening">Daylight</output><input id="evening" type="range" min="0" max="1" step="0.01" value="0"></label>
+        <div class="wetness-line"><span>Water on the surface</span><output id="wetness-value">Dry</output></div>
+        <meter id="wetness-meter" aria-label="Surface wetness" min="0" max="1" value="0"></meter>
+        <details class="weather-details"><summary>Follow the light</summary>
+          <p>A dry surface scatters its reflection. A water film adds a smoother reflective layer; the ground also darkens as it wets.</p>
+          <label for="wet-roughness">Wet-layer roughness <output id="roughness-value" for="wet-roughness">0.22</output><input id="wet-roughness" type="range" min="0.12" max="0.85" step="0.01" value="0.22"></label>
+          <div class="roughness-key" aria-hidden="true"><span>Narrow sheen</span><span>Broad sheen</span></div>
+          <p>Roughness changes the spread of a reflection. Orbit the camera to see that reflection move; the surface color stays attached to the blade.</p>
+        </details>
+        <div class="wind-row-actions"><button id="rain-stop">Stop rain</button><button id="weather-reset">Reset weather</button></div>
+      </section>
+      <section id="cover-panel" class="wind-panel cover-panel" aria-labelledby="cover-title" hidden>
+        <div class="wind-panel-heading"><div><h2 id="cover-title">Between the blades</h2><p id="cover-subtitle">Follow the layers</p></div><button id="cover-close" aria-label="Close layer controls">×</button></div>
+        <p class="wind-help" id="cover-explanation"></p>
+        <div class="cover-layers"><label><input id="cover-foundation" type="checkbox" checked> Ground weave</label><label><input id="cover-anchor" type="checkbox" checked> Tall blades</label><label id="cover-lower-row"><input id="cover-lower" type="checkbox" checked> Short cover</label></div>
+        <div id="cover-tuft-controls" hidden><label for="cover-tuft">Build the tuft with<select id="cover-tuft"><option value="opaque">Solid blades</option><option value="cards">Painted clusters</option></select></label></div>
+        <div id="cover-shell-controls" hidden><label for="cover-shells">Layers <output id="cover-shells-value">12</output><input id="cover-shells" type="range" min="4" max="24" step="1" value="12"></label><label for="cover-separate">Separate the slices <input id="cover-separate" type="range" min="0" max="1" step=".01" value="0"></label><label class="cover-check"><input id="cover-fins" type="checkbox" checked> Fins at shallow angles</label></div>
+        <div id="cover-sample-controls" hidden><label for="cover-samples">Sample limit <output id="cover-samples-value">24</output><input id="cover-samples" type="range" min="4" max="48" step="1" value="24"></label><label class="cover-check"><input id="cover-sample-view" type="checkbox"> Show samples visited</label><p class="wind-help">Blue visits fewer slices; orange visits more. An opaque view ends the search early. Distance gradually reduces detail.</p></div>
+        <details class="weather-details"><summary>Objects can touch it too</summary><p>A placed stone presses the same contact field as footsteps and the mouse brush. Remove it to watch the grass recover.</p><div class="wind-row-actions"><button id="cover-place">Place a stone</button><button id="cover-clear" disabled>Remove stones</button></div><p id="cover-placement" role="status" hidden>Click the ground to place a stone. Escape cancels.</p></details>
+      </section>
+      <aside id="performance" class="performance" aria-label="Performance monitor" hidden>
+        <div class="perf-heading"><span>PERFORMANCE</span><kbd>F3</kbd></div>
+        <div class="perf-fps"><output data-metric="fps">—</output><span>FPS</span><small>last 3 seconds</small></div>
+        <div class="perf-graph-label"><span>frame time</span><span data-metric="ceiling">33 ms</span></div>
+        <svg viewBox="0 0 190 42" role="img" aria-label="Frame times over the last three seconds; dashed line marks 16.7 milliseconds, the budget for 60 FPS.">
+          <line data-frame-guide x1="0" x2="190" y1="20" y2="20" />
+          <path data-frame-line d="" />
+        </svg>
+        <dl>
+          <div><dt>Frame avg / p95</dt><dd><span data-metric="frame">—</span> / <span data-metric="p95">—</span></dd></div>
+          <div><dt title="Synchronous scene update and render submission; not total CPU utilization.">CPU submit</dt><dd data-metric="cpu">—</dd></div>
+          <div><dt title="Asynchronous GPU render timing, including shadow passes, when supported by the browser.">GPU render</dt><dd data-metric="gpu">—</dd></div>
+          <div><dt>Draw calls</dt><dd data-metric="calls">—</dd></div>
+          <div><dt>Triangles</dt><dd data-metric="triangles">—</dd></div>
+        </dl>
+        <div class="perf-resolution" data-metric="resolution">—</div>
+      </aside>
+      <footer class="hud">
+        <div id="controls-help" class="instructions" hidden><div><kbd>W A S D</kbd><span>walk</span><kbd>SHIFT</kbd><span>run</span></div><p>Right-drag to look · scroll to zoom</p><p>Left-drag to brush · 0–9 choose a study · H / L continue past 09</p><p>H / L previous / next · R read · F3 stats</p><p>Tab force view · V wind tint · B contact tint</p><p>Shift+Tab enters the toolbar.</p></div>
+        <div class="actions"><button id="passage-toggle" aria-expanded="false" aria-controls="study-caption" aria-keyshortcuts="r" title="Read this study · R" disabled>Read</button><button id="wind-toggle" aria-expanded="false" aria-controls="wind-panel" hidden>Winds</button><button id="cover-toggle" aria-expanded="false" aria-controls="cover-panel" hidden>Layers</button><button id="weather-toggle" aria-expanded="false" aria-controls="weather-panel" hidden>Weather</button><button id="force-view-toggle" aria-pressed="true" aria-keyshortcuts="Tab" title="Show the forces · Tab while the scene has focus">Force view</button><button id="performance-toggle" aria-pressed="false" aria-expanded="false" aria-controls="performance">Stats</button><button id="controls-toggle" aria-expanded="false" aria-controls="controls-help">Controls</button><button id="home" aria-label="Start over from the beginning" title="Start over">↺</button></div>
+      </footer>
+      <div class="touch-controls" aria-label="Touch movement">
+        <div class="dpad"><button data-key="ArrowUp" aria-label="Walk forward">↑</button><button data-key="ArrowLeft" aria-label="Walk left">←</button><button data-key="ArrowDown" aria-label="Walk backward">↓</button><button data-key="ArrowRight" aria-label="Walk right">→</button></div>
+        <button id="touch-run" aria-pressed="false">Run</button>
+      </div>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,1217 @@
+{
+  "date": "2026-09-27",
+  "sourceSha256": "0653c310382c491985128ed89046d8d49dd35e62de864948c7e65fd899dda158",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "headless": true,
+  "scope": "Complete scene with tall blades, no rain, default two winds and cover settings; whole-device utilization includes other applications. Different representations have different coverage.",
+  "runs": [
+    {
+      "study": 10,
+      "tufts": "opaque",
+      "date": "2026-09-27T12:38:14.941Z",
+      "sourceReport": "state/interaction-2026-09-27T12-38-14.941Z.json",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "devicePixelRatio": 1,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "rendererReportedByBrowser": "Radeon R9 200 Series, or similar",
+        "gpuTimersSupported": false
+      },
+      "background": [
+        {
+          "card": "card1",
+          "percent": {
+            "count": 4,
+            "mean": 0.75,
+            "p50": 0,
+            "p95": 2,
+            "max": 2
+          }
+        }
+      ],
+      "phases": [
+        {
+          "name": "idle",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.69 ms",
+            "gpu": "not available",
+            "calls": "109",
+            "triangles": "797,433",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 17.764705882352942,
+                "p50": 17,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.668,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "held",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.67 ms",
+            "gpu": "not available",
+            "calls": "109",
+            "triangles": "797,433",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.5625,
+                "p50": 18,
+                "p95": 30,
+                "max": 30
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 241,
+            "mean": 0.08713692946058091,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 241,
+            "mean": 16.665892116182572,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "drag",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.63 ms",
+            "gpu": "not available",
+            "calls": "109",
+            "triangles": "797,433",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 17.941176470588236,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 251,
+            "mean": 0.0398406374501992,
+            "p50": 0,
+            "p95": 0,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 251,
+            "mean": 16.665657370517934,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000001746,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "released",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.51 ms",
+            "gpu": "not available",
+            "calls": "109",
+            "triangles": "797,433",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 17.875,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.667333333333332,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "cancelled",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.52 ms",
+            "gpu": "not available",
+            "calls": "109",
+            "triangles": "797,433",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 5,
+                "mean": 18.2,
+                "p50": 19,
+                "p95": 19,
+                "max": 19
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 60,
+            "mean": 16.672333333333334,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        }
+      ],
+      "checks": {
+        "terrainWasHit": true,
+        "heldAndDragged": true,
+        "noPickingWhenReleased": true,
+        "contactResponds": true,
+        "contactRecovers": true,
+        "cameraAndCharacterStayPut": true,
+        "renderWorkStaysConstant": true,
+        "twoWindsThroughout": true,
+        "noPageErrors": true
+      }
+    },
+    {
+      "study": 11,
+      "tufts": "opaque",
+      "date": "2026-09-27T12:38:40.597Z",
+      "sourceReport": "state/interaction-2026-09-27T12-38-40.597Z.json",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "devicePixelRatio": 1,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "rendererReportedByBrowser": "Radeon R9 200 Series, or similar",
+        "gpuTimersSupported": false
+      },
+      "background": [
+        {
+          "card": "card1",
+          "percent": {
+            "count": 4,
+            "mean": 5.5,
+            "p50": 5,
+            "p95": 7,
+            "max": 7
+          }
+        }
+      ],
+      "phases": [
+        {
+          "name": "idle",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.02 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "1,761,261",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.625,
+                "p50": 18,
+                "p95": 22,
+                "max": 22
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.66725,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.1200000000008
+          }
+        },
+        {
+          "name": "held",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.87 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "1,761,261",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.75,
+                "p50": 19,
+                "p95": 21,
+                "max": 21
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 241,
+            "mean": 0.07053941908713693,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 241,
+            "mean": 16.66556016597511,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "drag",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.80 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "1,761,261",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 19,
+                "p50": 18,
+                "p95": 23,
+                "max": 23
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 251,
+            "mean": 0.0398406374501992,
+            "p50": 0,
+            "p95": 0,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 251,
+            "mean": 16.669322709163346,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000001746,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "released",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.68 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "1,761,261",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.625,
+                "p50": 19,
+                "p95": 22,
+                "max": 22
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.66650000000001,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "cancelled",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.70 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "1,761,261",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 4,
+                "mean": 18,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 60,
+            "mean": 16.671999999999993,
+            "p50": 17.06000000000131,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        }
+      ],
+      "checks": {
+        "terrainWasHit": true,
+        "heldAndDragged": true,
+        "noPickingWhenReleased": true,
+        "contactResponds": true,
+        "contactRecovers": true,
+        "cameraAndCharacterStayPut": true,
+        "renderWorkStaysConstant": true,
+        "twoWindsThroughout": true,
+        "noPageErrors": true
+      }
+    },
+    {
+      "study": 11,
+      "tufts": "cards",
+      "date": "2026-09-27T12:39:06.253Z",
+      "sourceReport": "state/interaction-2026-09-27T12-39-06.253Z.json",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "devicePixelRatio": 1,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "rendererReportedByBrowser": "Radeon R9 200 Series, or similar",
+        "gpuTimersSupported": false
+      },
+      "background": [
+        {
+          "card": "card1",
+          "percent": {
+            "count": 4,
+            "mean": 5.75,
+            "p50": 5,
+            "p95": 7,
+            "max": 7
+          }
+        }
+      ],
+      "phases": [
+        {
+          "name": "idle",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.91 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "904,525",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 17.8125,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.668083333333332,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.080000000000837
+          }
+        },
+        {
+          "name": "held",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.81 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "904,525",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 19.0625,
+                "p50": 19,
+                "p95": 21,
+                "max": 21
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 241,
+            "mean": 0.06639004149377593,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 241,
+            "mean": 16.666390041493777,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "drag",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.75 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "904,525",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 19.705882352941178,
+                "p50": 20,
+                "p95": 22,
+                "max": 22
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 250,
+            "mean": 0.024,
+            "p50": 0,
+            "p95": 0,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 250,
+            "mean": 16.668560000000006,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000001746,
+            "max": 17.100000000002183
+          }
+        },
+        {
+          "name": "released",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.62 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "904,525",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.125,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.668083333333335,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "cancelled",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.66 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "904,525",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 4,
+                "mean": 17.25,
+                "p50": 17,
+                "p95": 18,
+                "max": 18
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 60,
+            "mean": 16.654999999999987,
+            "p50": 17.06000000000131,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        }
+      ],
+      "checks": {
+        "terrainWasHit": true,
+        "heldAndDragged": true,
+        "noPickingWhenReleased": true,
+        "contactResponds": true,
+        "contactRecovers": true,
+        "cameraAndCharacterStayPut": true,
+        "renderWorkStaysConstant": true,
+        "twoWindsThroughout": true,
+        "noPageErrors": true
+      }
+    },
+    {
+      "study": 12,
+      "tufts": "opaque",
+      "date": "2026-09-27T12:39:31.849Z",
+      "sourceReport": "state/interaction-2026-09-27T12-39-31.849Z.json",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "devicePixelRatio": 1,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "rendererReportedByBrowser": "Radeon R9 200 Series, or similar",
+        "gpuTimersSupported": false
+      },
+      "background": [
+        {
+          "card": "card1",
+          "percent": {
+            "count": 4,
+            "mean": 5.25,
+            "p50": 5,
+            "p95": 6,
+            "max": 6
+          }
+        }
+      ],
+      "phases": [
+        {
+          "name": "idle",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.49 ms",
+            "gpu": "not available",
+            "calls": "179",
+            "triangles": "975,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 31.6875,
+                "p50": 35,
+                "p95": 36,
+                "max": 36
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.66841666666667,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000000837,
+            "max": 17.11999999999989
+          }
+        },
+        {
+          "name": "held",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.04 ms",
+            "gpu": "not available",
+            "calls": "179",
+            "triangles": "975,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 21.6875,
+                "p50": 21,
+                "p95": 24,
+                "max": 24
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 241,
+            "mean": 0.08298755186721991,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 241,
+            "mean": 16.665311203319504,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "drag",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.22 ms",
+            "gpu": "not available",
+            "calls": "179",
+            "triangles": "975,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 22.176470588235293,
+                "p50": 22,
+                "p95": 25,
+                "max": 25
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 251,
+            "mean": 0.055776892430278883,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 251,
+            "mean": 16.667410358565732,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000001746,
+            "max": 17.100000000002183
+          }
+        },
+        {
+          "name": "released",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.20 ms",
+            "gpu": "not available",
+            "calls": "179",
+            "triangles": "975,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 22,
+                "p50": 22,
+                "p95": 25,
+                "max": 25
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.670416666666657,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.100000000002183
+          }
+        },
+        {
+          "name": "cancelled",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.17 ms",
+            "gpu": "not available",
+            "calls": "179",
+            "triangles": "975,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 5,
+                "mean": 21.4,
+                "p50": 22,
+                "p95": 22,
+                "max": 22
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 60,
+            "mean": 16.679333333333307,
+            "p50": 17.07999999999811,
+            "p95": 17.099999999998545,
+            "max": 17.100000000002183
+          }
+        }
+      ],
+      "checks": {
+        "terrainWasHit": true,
+        "heldAndDragged": true,
+        "noPickingWhenReleased": true,
+        "contactResponds": true,
+        "contactRecovers": true,
+        "cameraAndCharacterStayPut": true,
+        "renderWorkStaysConstant": true,
+        "twoWindsThroughout": true,
+        "noPageErrors": true
+      }
+    },
+    {
+      "study": 13,
+      "tufts": "opaque",
+      "date": "2026-09-27T12:39:57.599Z",
+      "sourceReport": "state/interaction-2026-09-27T12-39-57.599Z.json",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+        "devicePixelRatio": 1,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "rendererReportedByBrowser": "Radeon R9 200 Series, or similar",
+        "gpuTimersSupported": false
+      },
+      "background": [
+        {
+          "card": "card1",
+          "percent": {
+            "count": 4,
+            "mean": 7.75,
+            "p50": 7,
+            "p95": 10,
+            "max": 10
+          }
+        }
+      ],
+      "phases": [
+        {
+          "name": "idle",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "3.11 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "807,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.8125,
+                "p50": 19,
+                "p95": 21,
+                "max": 21
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.666583333333335,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "held",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.98 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "807,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 17.625,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 241,
+            "mean": 0.05394190871369295,
+            "p50": 0,
+            "p95": 1,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 241,
+            "mean": 16.667136929460575,
+            "p50": 17.05999999999949,
+            "p95": 17.079999999999927,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "drag",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.93 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "807,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 17,
+                "mean": 16.941176470588236,
+                "p50": 17,
+                "p95": 19,
+                "max": 19
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 251,
+            "mean": 0.043824701195219126,
+            "p50": 0,
+            "p95": 0,
+            "max": 1
+          },
+          "frameMs": {
+            "count": 251,
+            "mean": 16.66749003984064,
+            "p50": 17.05999999999949,
+            "p95": 17.080000000001746,
+            "max": 17.100000000000364
+          }
+        },
+        {
+          "name": "released",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.83 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "807,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 16,
+                "mean": 18.0625,
+                "p50": 18,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 240,
+            "mean": 16.665500000000005,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        },
+        {
+          "name": "cancelled",
+          "hud": {
+            "fps": "60",
+            "ceiling": "33 ms",
+            "frame": "16.7 ms",
+            "p95": "17.1 ms",
+            "cpu": "2.79 ms",
+            "gpu": "not available",
+            "calls": "144",
+            "triangles": "807,513",
+            "resolution": "1440 \u00d7 900 \u00b7 1.0\u00d7 DPR"
+          },
+          "gpuUtilization": [
+            {
+              "card": "card1",
+              "percent": {
+                "count": 4,
+                "mean": 19,
+                "p50": 19,
+                "p95": 20,
+                "max": 20
+              }
+            }
+          ],
+          "pickMs": {
+            "count": 0,
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "frameMs": {
+            "count": 60,
+            "mean": 16.657333333333312,
+            "p50": 17.05999999999767,
+            "p95": 17.080000000001746,
+            "max": 17.080000000001746
+          }
+        }
+      ],
+      "checks": {
+        "terrainWasHit": true,
+        "heldAndDragged": true,
+        "noPickingWhenReleased": true,
+        "contactResponds": true,
+        "contactRecovers": true,
+        "cameraAndCharacterStayPut": true,
+        "renderWorkStaysConstant": true,
+        "twoWindsThroughout": true,
+        "noPageErrors": true
+      }
+    }
+  ]
+}

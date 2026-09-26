@@ -1,0 +1,87 @@
+import { expect, test } from '@playwright/test';
+
+test('the reader completes, dismisses and reopens a passage while the scene stays alive', async ({ page }) => {
+  await page.goto('/');await expect(page.locator('#loading')).toBeHidden();
+  const passage = page.locator('#study-caption');
+  const snapshot = () => page.evaluate(() => (window as any).__study.snapshot());
+  await expect(passage).toHaveAttribute('data-reading', 'revealing');
+  await expect(page.locator('#study-next')).toHaveClass(/passage-guide/);
+  await expect(page.locator('#performance')).toBeHidden();
+  await expect(page.locator('#controls-help')).toBeHidden();
+  const initial = await snapshot();
+  await page.locator('#world').focus();await page.keyboard.press('Enter');
+  await expect(passage).toHaveAttribute('data-reading', 'complete');
+  expect(await page.locator('#study-copy').innerText()).toBe(await page.locator('#study-description').textContent());
+  // Observe continued animation past the end of the reveal; reading has no expiry.
+  await expect.poll(async () => (await snapshot()).grass.time).toBeGreaterThan(initial.grass.time + 2);
+  await expect(passage).toBeVisible();
+  expect((await snapshot()).position).toEqual(initial.position);
+  await page.keyboard.press('Enter');await expect(passage).toBeHidden();
+  await expect(page.locator('#study-next')).not.toHaveClass(/passage-guide/);
+  await page.keyboard.press('r');await expect(passage).toHaveAttribute('data-reading', 'complete');
+  await expect(passage).toBeVisible();
+  await page.getByText('Under the surface', { exact: true }).click();
+  await expect(page.locator('#study-cost')).toBeVisible();
+  await page.keyboard.press('Escape');await expect(passage).toBeHidden();
+  await expect(page.locator('#world')).toBeFocused();
+  await page.keyboard.down('w');
+  await expect.poll(async () => (await snapshot()).state).toBe('walk');
+  await page.keyboard.up('w');
+  await expect.poll(async () => (await snapshot()).state).toBe('idle');
+});
+
+test('a new stage replaces the revealing passage; motion and system theme preferences update in place', async ({ page }) => {
+  await page.goto('/');await expect(page.locator('#loading')).toBeHidden();
+  const initial = await page.evaluate(() => (window as any).__study.snapshot());
+  await page.keyboard.press('8');await page.keyboard.press('h');await page.keyboard.press('h');
+  await expect(page.locator('#app')).toHaveAttribute('data-study', 'contact');
+  await expect(page.locator('#app')).toHaveAttribute('data-transition', 'idle');
+  await expect(page.locator('#passage-number')).toHaveText('06');
+  await expect(page.locator('#passage-title')).toHaveText(await page.locator('#study-title').innerText());
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('#study-caption')).toHaveAttribute('data-reading', 'complete');
+  const copy = await page.locator('#study-copy').innerText();
+  const light = await page.locator('#study-caption').evaluate(el => getComputedStyle(el).backgroundColor);
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect.poll(() => page.locator('#study-caption').evaluate(el => getComputedStyle(el).backgroundColor)).not.toBe(light);
+  expect(await page.locator('#study-copy').innerText()).toBe(copy);
+  await page.keyboard.press('8');
+  await expect(page.locator('#passage-number')).toHaveText('08');
+  await expect(page.locator('#study-caption')).toHaveAttribute('data-reading', 'complete');
+  const final = await page.evaluate(() => (window as any).__study.snapshot());
+  expect(final.position).toEqual(initial.position);expect(final.yaw).toBe(initial.yaw);
+  await expect(page.locator('#world')).toHaveCSS('opacity', '1');
+});
+
+test('reading, wind editing and controls remain reachable without stealing native keyboard actions', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/?s=8');await expect(page.locator('#loading')).toBeHidden();
+  const passage = page.locator('#study-caption');
+  await expect(page.locator('#wind-panel')).toBeHidden();
+  await expect(page.locator('#wind-toggle')).toHaveClass(/passage-guide/);
+  await page.getByRole('button', { name: 'Winds', exact: true }).click();
+  await expect(passage).toBeHidden();
+  await expect(page.locator('#wind-toggle')).not.toHaveClass(/passage-guide/);
+  await page.getByRole('button', { name: 'Add vortex', exact: true }).click();
+  const x = page.getByLabel('Wind 3 origin X', { exact: true });
+  await x.focus();await page.keyboard.press('r');
+  await expect(passage).toBeHidden();
+  await x.fill('12');await page.keyboard.press('Tab');expect(Number(await x.inputValue())).toBe(12);
+  await page.locator('#world').focus();await page.keyboard.press('r');
+  await expect(passage).toBeVisible();await expect(page.locator('#wind-panel')).toBeHidden();
+  await page.getByRole('button', { name: 'Controls', exact: true }).click();
+  await expect(passage).toBeHidden();await expect(page.locator('#controls-help')).toBeVisible();
+  await page.keyboard.press('r');await expect(passage).toBeVisible();
+  await expect(page.locator('#controls-help')).toBeHidden();
+  await page.getByRole('button', { name: 'Stats', exact: true }).focus();await page.keyboard.press('Enter');
+  await expect(page.locator('#performance')).toBeVisible();await expect(passage).toBeVisible();
+  await page.getByRole('button', { name: 'Winds', exact: true }).click();
+  expect(Number(await x.inputValue())).toBe(12);
+  await page.getByRole('button', { name: 'Controls', exact: true }).click();
+  await expect(page.locator('#wind-panel')).toBeHidden();
+  await page.getByRole('button', { name: 'Winds', exact: true }).click();
+  await expect(page.locator('#controls-help')).toBeHidden();
+  await page.getByRole('button', { name: 'Read', exact: true }).click();
+  await page.getByRole('button', { name: 'Into the field →' }).click();
+  await expect(passage).toBeHidden();await expect(page.locator('#world')).toBeFocused();
+});
